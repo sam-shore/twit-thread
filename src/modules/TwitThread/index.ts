@@ -37,6 +37,7 @@ export class TwitThread extends Twit {
   public tweetThread = async (
     thread: Thread
   ): Promise<Twit.Twitter.Status[]> => {
+    
     const trimmedTweets = this.trimmer.trim(thread.map((tweet) => tweet.text));
 
     const tweets = this.matchParamsToTweets(thread, trimmedTweets);

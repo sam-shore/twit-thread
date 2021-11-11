@@ -1,3 +1,5 @@
+var twitter = require('twitter-text')
+
 export default class Trimmer {
   private maxLength: number;
 
@@ -22,7 +24,7 @@ export default class Trimmer {
   };
 
   private isGreaterThanMaxLength = (text: string): boolean =>
-    text.length > this.maxLength;
+    twitter.default.parseTweet(text).valid
 
   private getSeparationIndex = (text: string): number => {
     let endIndex = this.getEndIndex(text);
