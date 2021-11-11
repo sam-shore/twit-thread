@@ -24,7 +24,7 @@ export default class Trimmer {
   };
 
   private isGreaterThanMaxLength = (text: string): boolean =>
-    twitter.default.parseTweet(text).valid
+    !twitter.default.parseTweet(text).valid
 
   private getSeparationIndex = (text: string): number => {
     let endIndex = this.getEndIndex(text);
